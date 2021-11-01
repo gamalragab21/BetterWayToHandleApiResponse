@@ -15,6 +15,7 @@ fun<T> result(call :suspend ()->Response<T>):Flow<ApiResponse<T?>> = flow{
                 emit(ApiResponse.Success(it.body()))
             }else
             {
+                
                 c.errorBody()?.let {
                     it.close()
                     emit(ApiResponse.Failure(it.toString()))
