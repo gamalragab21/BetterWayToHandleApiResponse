@@ -1,9 +1,10 @@
 package com.example.handeldataevent.data.remote
 
+import com.google.gson.annotations.SerializedName
+
 data class Posts(
+    @SerializedName("id")
     val id:Int,
-    val title:String,
-
-){
-
-}
+    @SerializedName("title")
+    val title:String
+)
